@@ -6,6 +6,7 @@ export const TextMaterial = new THREE.ShaderMaterial({
         uTime: { value: 0 },
         uOpacity: { value: 0}
     },
+    precision: "lowp",
     depthTest: false,
     depthWrite: false,
     toneMapped: false,

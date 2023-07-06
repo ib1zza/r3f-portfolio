@@ -12,7 +12,7 @@ function App() {
             {
                 fov: 10,
                 near: 0.1,
-                far: 200,
+                far: 20,
                 position: [0, 3.5, 0],
                 rotation: [-Math.PI / 2, 0, -Math.PI / 2]
             }

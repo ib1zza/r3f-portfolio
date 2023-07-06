@@ -8,9 +8,9 @@ import {gsap} from "gsap";
 import constants from "../const";
 
 const particlesParams = {
-    count: 300,
+    count: 200,
     size: 8,
-    sizeOfPlane: 20,
+    sizeOfPlane: 13,
 }
 
 function createParticles() {

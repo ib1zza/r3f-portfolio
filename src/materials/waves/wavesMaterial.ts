@@ -10,6 +10,7 @@ const wavesParams = {
 
 export const ParticlesMaterial = new THREE.ShaderMaterial({
     depthWrite: false,
+    precision: "lowp",
     transparent: true,
     blending: THREE.AdditiveBlending,
     // vertexColors: true,

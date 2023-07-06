@@ -79,7 +79,7 @@ const Text = ({isVisible, toggleState}: Props) => {
         <>
             <Center  ref={text} position={[0, 0, p]}>
                 <Text3D  height={0.005} size={0.3} font={"./fonts/titillium_bold.typeface.json"}
-                        material={TextMaterial} curveSegments={4}>
+                        material={TextMaterial} curveSegments={3} >
                     ib1zza
                 </Text3D>
             </Center>

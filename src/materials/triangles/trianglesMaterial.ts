@@ -1,11 +1,15 @@
 import * as THREE from "three";
 
 export const TriangleMaterial = new THREE.ShaderMaterial({
+    precision: "lowp",
     vertexShader: `
+   
+
       varying vec2 vUv;
 
       void main() {
-        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+      gl_Position = projectionMatrix * viewMatrix * modelMatrix * instanceMatrix * vec4(position, 1.0);
+        // gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
         vUv = uv;
       }
     `,
@@ -21,7 +25,7 @@ export const TriangleMaterial = new THREE.ShaderMaterial({
       }
     `,
     uniforms: {
-        uOpacityMultiplier: { value: 0 },
+        uOpacityMultiplier: { value: 1 },
     },
 
     transparent: true,

@@ -10,11 +10,13 @@ import Text from "./Text.tsx";
 import Effects from "./Effects.tsx";
 import Xmark from "./Xmark.tsx";
 import AboutMe from "./AboutMe.tsx";
+import {useThree} from "@react-three/fiber";
 
 
 const Experience = () => {
     // const isDev = window.location.hash === "#debug";
     const [isShowingHomepage, setIsShowingHomepage] = useState(true);
+   ;
 
     const {controlsToggler} = useControls('global', {
         controlsToggler: {
@@ -32,7 +34,8 @@ const Experience = () => {
 
             <Background/>
             <Effects/>
-            {/*<OrbitControls makeDefault enabled={false}/>*/}
+            {/*<OrbitControls makeDefault enabled={true}/>*/}
+
 
 
             <Camera isRotatedToWaves={!isShowingHomepage}>
