@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
+
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ivory;
+}
+
+canvas {
+    touch-action: none;
+}
+
+.htmlScreen {
+    color: white;
+    width: 90%;
+    max-width: 600px;
+    font-family: 'Titillium Web', sans-serif;
+    pointer-events: none;
+}
+
+.content {
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.htmlScreen.hidden  .content {
+    opacity: 0;
+    transform: translateY(250px);
+    pointer-events: none;
+    z-index: -100;
+}
+
+.htmlScreen.visible  .content {
+    opacity: 1;
+    transform: translateY(0px);
+    z-index: 1;
+    pointer-events: all;
+}
+
+
+.main__title {
+    margin: 20px 0 ;
+    text-align: center;
+}
+
+.main__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__social__icon {
+    display: block;
+}
+
+.main__social__icon:hover svg {
+    fill: rgb(180, 180, 180);
+}
+
+.main__social__icon:not(:last-child) {
+    margin-right: 40px;
+}
+
+.main__social__icon svg{
+    height: 40px;
+    transition: all 0.2s ease-in-out;
+    fill: rgb(255, 255, 255);
+}
