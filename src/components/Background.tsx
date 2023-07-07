@@ -1,6 +1,5 @@
 import {useControls} from "leva";
 import {useEffect, useState} from "react";
-import {useLocalStorage} from "../hooks/useLocalStorage.ts";
 
 
 const Background = () => {

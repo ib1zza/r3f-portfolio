@@ -1,16 +1,13 @@
 import Background from "./Background.tsx";
-import {Perf} from "r3f-perf";
-import {OrbitControls} from "@react-three/drei";
 import Rectangles from "./Rectangles.tsx";
 import Particles from "./Particles.tsx";
 import {useEffect, useState} from "react";
-import {Leva, useControls} from "leva";
+import { useControls} from "leva";
 import Camera from "./Camera.tsx";
 import Text from "./Text.tsx";
 import Effects from "./Effects.tsx";
 import Xmark from "./Xmark.tsx";
 import AboutMe from "./AboutMe.tsx";
-import {useThree} from "@react-three/fiber";
 
 
 const Experience = () => {
