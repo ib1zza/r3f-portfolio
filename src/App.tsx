@@ -5,7 +5,7 @@ import {Leva} from "leva";
 import {Perf} from "r3f-perf";
 
 function App() {
-    const isDev = true;
+    const isDev = window.location.hash === "#debug";
 
     return (
         <><Canvas camera={
@@ -22,7 +22,6 @@ function App() {
             <Experience/>
         </Canvas>
             <Leva
-                // collapsed // default = false, when true the GUI is collpased
                 hidden={!isDev}
             />
         </>
