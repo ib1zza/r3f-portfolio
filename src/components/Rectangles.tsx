@@ -61,25 +61,17 @@ const Rectangles = ({isShowing}: Props) => {
 
 
             gsap.to(TriangleMaterial.uniforms.uOpacityMultiplier, {
-                duration: constants.animationDuration,
+                duration: constants.animationDuration /2,
                 value: 1,
             })
 
+            gsap.to(groupRef.current.scale, {
+                duration: constants.animationDuration,
+                x: 1,
+                y: 1,
+                z: 1,
+            })
 
-            // meshRef.current.children.forEach((element: any, i: number) => {
-            //     gsap.to(element.position, {
-            //         duration: constants.animationDuration,
-            //         x: -Math.cos((Math.PI * 2 * (controlsCount - i + 70)) / (controlsCount)) * multiplier,
-            //         y: 0,
-            //         z: Math.sin((Math.PI * 2 * (controlsCount - i + 70)) / (controlsCount)) * multiplier,
-            //     })
-            //     gsap.to(element.rotation, {
-            //         duration: constants.animationDuration,
-            //         x: 0,
-            //         y: (Math.PI * 2 * (controlsCount - i)) / controlsCount,
-            //         z: 0,
-            //     })
-            // });
 
         } else {
             gsap.to(TriangleMaterial.uniforms.uOpacityMultiplier, {
@@ -88,19 +80,14 @@ const Rectangles = ({isShowing}: Props) => {
             }).then(() => {
                 camera.remove(groupRef.current);
             })
-            //
-            // meshRef.current.children.forEach((element: any) => {
-            //     gsap.to(element.rotation, {
-            //         duration: constants.animationDuration,
-            //         x: Math.random(),
-            //         z: Math.random(),
-            //     })
-            //     gsap.to(element.position, {
-            //         duration: constants.animationDuration,
-            //         x: element.position.x * (1 + Math.random() * 1),
-            //         z: element.position.z * (1 + Math.random() * 1),
-            //     })
-            // })
+
+            gsap.to(groupRef.current.scale, {
+                duration: constants.animationDuration,
+                x: 3,
+                y: 3,
+                z: 3,
+            })
+
         }
 
 
@@ -117,9 +104,6 @@ const Rectangles = ({isShowing}: Props) => {
             <instancedMesh   ref={meshRef} args={[null, null, controlsCount]}>
                 {geometry}
                 {material}
-
-                {/*<shaderMaterial attach="material" args={[TriangleMaterial] as any}/>*/}
-
             </instancedMesh>
         </group>
 
