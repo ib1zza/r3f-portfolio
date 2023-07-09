@@ -34,6 +34,7 @@ interface Props {
 
 const Particles = ({isCalm}: Props) => {
     const positionsBuffer = createParticles();
+    console.log(window.devicePixelRatio)
 
     useControls('waves', {
         blending: {
@@ -47,7 +48,7 @@ const Particles = ({isCalm}: Props) => {
             }
         },
         pointSize: {
-            value: 8 * Math.min(window.devicePixelRatio, 2),
+            value: 10 * Math.min(window.devicePixelRatio, 2),
             min: 1,
             max: 100,
             onChange: (data) => {
@@ -67,7 +68,7 @@ const Particles = ({isCalm}: Props) => {
             }
         },
         colorOffset: {
-            value: 0.3,
+            value: 0.1,
             min: 0,
             max: 1,
             onChange: (data) => {
@@ -75,7 +76,7 @@ const Particles = ({isCalm}: Props) => {
             }
         },
         colorMultiplier: {
-            value: 0.75,
+            value: 1.25,
             min: 0,
             max: 5,
             onChange: (data) => {
@@ -99,7 +100,7 @@ const Particles = ({isCalm}: Props) => {
     }, [isCalm])
 
     useFrame((_, delta) => {
-        ParticlesMaterial.uniforms.uTime.value += delta * 0.5
+        ParticlesMaterial.uniforms.uTime.value += delta
     })
 
     return (

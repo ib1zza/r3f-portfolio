@@ -9,7 +9,7 @@ varying vec2 vUv;
 
 void main()
 {
-    float mixStrength = (vElevation + uColorOffset) * uColorMultiplier;
+    float mixStrength = clamp((vElevation + uColorOffset) ,0.0,1.0) * uColorMultiplier;
     vec3 color = mix( uDepthColor, uSurfaceColor, mixStrength );
 //    float multiplier = 200.0;
 //    float cellSize = 0.15;

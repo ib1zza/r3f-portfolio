@@ -4,7 +4,7 @@ import vertex from "./wavesShaders/vertex.glsl";
 
 
 const wavesParams = {
-    size: 8,
+    size: 15,
 }
 
 
