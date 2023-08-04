@@ -15,7 +15,11 @@ const AboutMe = ({isVisible} : Props) => {
                 center
             >
                 <div className={"content"}>
-                    Hi, my name is Mikhail Pshenichnyy and I'm 17 years old frontend dev from Saint-Petersburg.
+                    Hi, my name is Mikhail Pshenichnyy and I'm
+                    {" "}
+                    {new Date(new Date().getTime() - new Date(2005, 8, 22).getTime()).getUTCFullYear() - 1970}
+                    {" "}
+                    years old frontend dev from Saint-Petersburg.
                     I create websites using modern development tools.
                     I am also interested in developing websites using three js and webgl.
 

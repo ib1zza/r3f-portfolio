@@ -21,7 +21,7 @@ export const TriangleMaterial = new THREE.ShaderMaterial({
        
       void main() {
        float color = 0.4 * step(0.48, abs(vUv.x - 0.5)) + step(0.48, abs(vUv.y - 0.5));
-         gl_FragColor = vec4(vec3(color), vUv.y * vUv.y * uOpacityMultiplier * color );
+         gl_FragColor = vec4(vec3(color) * 0.9, vUv.y * vUv.y * uOpacityMultiplier * color );
       }
     `,
     uniforms: {

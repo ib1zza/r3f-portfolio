@@ -23,8 +23,8 @@ export const ParticlesMaterial = new THREE.ShaderMaterial({
 
         uDepthColor: {value: new THREE.Color("#000000")},
         uSurfaceColor: {value: new THREE.Color("#ffffff")},
-        uColorOffset: {value: 0.05},
-        uColorMultiplier: {value: 1.7},
+        uColorOffset: {value: 0.15},
+        uColorMultiplier: {value: 2.2},
 
         uSmallWavesElevation: {value: 6},
         uSmallWavesFrequency: {value: 0.5},

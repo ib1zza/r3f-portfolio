@@ -35,7 +35,7 @@ export const TextMaterial = new THREE.ShaderMaterial({
          abs(sin(((vUv.x + vUv.y) * 10.0 + speed * 25.0)) + 0.2) * 
          (abs(sin(((vUv.x - vUv.y) * 5.0 + speed * 3.0))));
 
-        gl_FragColor = vec4(vec3(3.5) * vColor.rgb  * mul, vColor.a);
+        gl_FragColor = vec4(vec3(2.5) * vColor.rgb  * mul, vColor.a);
       }
     `,
 });

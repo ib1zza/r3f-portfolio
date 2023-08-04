@@ -4,6 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import constants from "../const";
 import gsap from "gsap";
 import {useFrame} from "@react-three/fiber";
+import {useStateContext} from "../context/StateContext.tsx";
 
 interface Props {
     isVisible: boolean;
@@ -12,8 +13,7 @@ interface Props {
 
 const Text = ({isVisible, toggleState}: Props) => {
     const text = useRef<any>();
-    const [hovered, setHovered] = useState(false);
-
+    const {isTextHovered, setIsTextHovered} = useStateContext();
     const p = -2.5;
     useEffect(() => {
         if (isVisible) {
@@ -55,7 +55,7 @@ const Text = ({isVisible, toggleState}: Props) => {
 
     useEffect(() => {
         if(!isVisible) return;
-        if(hovered) {
+        if(isTextHovered) {
             const scale = 0.9;
             document.body.style.cursor = 'pointer'
             gsap.to(text.current.scale, {
@@ -73,7 +73,15 @@ const Text = ({isVisible, toggleState}: Props) => {
             })
             document.body.style.cursor = 'default'
         }
-    }, [hovered]);
+    }, [isTextHovered]);
+
+    const onHover = () => {
+        setIsTextHovered(true);
+    }
+
+    const onLeave = () => {
+        setIsTextHovered(false);
+    }
 
     return (
         <>
@@ -84,7 +92,7 @@ const Text = ({isVisible, toggleState}: Props) => {
                 </Text3D>
             </Center>
             <Center position={[0, 0, p]}>
-                <mesh visible={false} onClick={clickHandler} onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)}>
+                <mesh visible={false} onClick={clickHandler} onPointerOver={onHover} onPointerOut={onLeave}>
                     <meshBasicMaterial transparent={true} attach="material" />
                     <planeGeometry args={[1.5, 0.6, 1,1]} attach="geometry"/>
                 </mesh>

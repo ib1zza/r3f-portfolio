@@ -8,16 +8,23 @@ import Text from "./Text.tsx";
 import Effects from "./Effects.tsx";
 import Xmark from "./Xmark.tsx";
 import AboutMe from "./AboutMe.tsx";
+import {OrbitControls} from "@react-three/drei";
 
 
 const Experience = () => {
     // const isDev = window.location.hash === "#debug";
     const [isShowingHomepage, setIsShowingHomepage] = useState(true);
-   ;
+
 
     const {controlsToggler} = useControls('global', {
         controlsToggler: {
             value: true,
+        }
+    })
+
+    const {isClose} = useControls("isClose", {
+        isClose: {
+            value: false,
         }
     })
 
@@ -31,7 +38,7 @@ const Experience = () => {
 
             <Background/>
             <Effects/>
-            {/*<OrbitControls makeDefault enabled={true}/>*/}
+            <OrbitControls makeDefault enabled={true} enableZoom={false}/>
 
 
 
