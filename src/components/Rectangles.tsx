@@ -6,7 +6,6 @@ import {TriangleMaterial} from "../materials/triangles/trianglesMaterial.ts";
 import {useFrame, useThree} from "@react-three/fiber";
 import constants from "../const";
 import gsap from "gsap";
-import {lerp} from "three/src/math/MathUtils";
 import {useStateContext} from "../context/StateContext.tsx";
 
 
@@ -28,7 +27,7 @@ const Rectangles = ({isShowing}: Props) => {
 
     const controlsCount = initialCount;
 
-    useFrame((state, delta) => {
+    useFrame((_, delta) => {
         if (!isCentered) {
             meshRef.current.rotation.y += delta * 0.3;
             // meshRef.current.position.x = lerp(meshRef.current.position.x, Math.sin(state.clock.getElapsedTime() * 2) * 1.2, delta);

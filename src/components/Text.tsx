@@ -1,6 +1,6 @@
 import {Center, Text3D} from "@react-three/drei";
 import {TextMaterial} from "../materials/text/textMaterial.ts";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import constants from "../const";
 import gsap from "gsap";
 import {useFrame} from "@react-three/fiber";

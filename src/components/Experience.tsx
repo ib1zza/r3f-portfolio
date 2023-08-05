@@ -22,11 +22,6 @@ const Experience = () => {
         }
     })
 
-    const {isClose} = useControls("isClose", {
-        isClose: {
-            value: false,
-        }
-    })
 
     useEffect(() => {
         setIsShowingHomepage(controlsToggler)
